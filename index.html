@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Music Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-window">
+        <header class="app-header">
+            <div class="app-title">AI Music Generator (MVP)</div>
+            <div class="window-buttons">
+                <span class="button minimize"></span>
+                <span class="button maximize"></span>
+                <span class="button close"></span>
+            </div>
+        </header>
+        
+        <div class="app-content">
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="description">Descripción de la música</label>
+                    <textarea 
+                        id="description" 
+                        placeholder="Describe la música que quieres generar"
+                        rows="6"
+                    ></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mood">Mood</label>
+                        <select id="mood">
+                            <option value="chill">Chill</option>
+                            <option value="alegre">Alegre</option>
+                            <option value="epico">Épico</option>
+                            <option value="oscuro">Oscuro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Duración</label>
+                        <select id="duration">
+                            <option value="30">30s</option>
+                            <option value="60">60s</option>
+                            <option value="120">120s</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="generate-btn" class="btn-primary">Generar música</button>
+            </div>
+            
+            <div id="result-container" class="result-container" style="display: none;">
+                <div class="result-header">
+                    <h3>Música generada</h3>
+                </div>
+                
+                <audio id="audio-player" controls>
+                    <source src="" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+                
+                <button id="download-btn" class="btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Descargar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
